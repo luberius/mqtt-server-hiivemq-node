@@ -9,10 +9,7 @@ var options = {
   password: process.env.MQTT_PASSWORD,
 };
 
-var client = mqtt.connect(
-  "bdacb9722f6b4e129c0a6d757fe1b184.s1.eu.hivemq.cloud",
-  options,
-);
+var client = mqtt.connect(process.env.MQTT_HOST, options);
 
 client.on("connect", function () {
   console.log("Connected");
